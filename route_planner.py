@@ -1,10 +1,15 @@
+import math
 from helpers import Map, load_map, show_map
 
-def shortest_path(Map,start,goal):
-    return("shortest path called.")
+# def shortest_path(Map,start,goal):
+#     return("shortest path called.")
 
 def distance(start, goal):
+    print("map_10 intersections", map_10.intersections)
+    a = map_10.intersections[start]
+    print(a)
     return("distance called.")
+
 
 
 ### TEST MAPS ###
@@ -19,9 +24,9 @@ map_10 = load_map("map-10.pickle")
 # shortest_path(map_40, 8, 24)
 # # path: [8, 14, 16, 37, 12, 17, 10, 24]
 
-# test 2
-shortest_path(map_10, 2, 0)
-# path: [2, 3, 5, 0]
+# # test 2
+# shortest_path(map_10, 2, 0)
+# # path: [2, 3, 5, 0]
 
 
 # # test 3
