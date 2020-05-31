@@ -29,11 +29,9 @@ def shortest_path(Map,start,goal):
     
 #     print(came_from, cost_so_far)
     return best_route(came_from, start, goal)
-#     return("shortest path called.")
 
 # calculates the distance between two points
 def distance(start, end):
-#     return (math.hypot(map_10.intersections[end][0] - map_10.intersections[start][0], map_10.intersections[end][1] - map_10.intersections[start][1]))
         return (math.hypot(end[0] - start[0], end[1] - start[1]))
 
 # traverse backwards to find the optimal path
@@ -46,12 +44,10 @@ def best_route(came_from, start, goal):
     
     while node != start:
         path.append(node)
-        node = came_from[node]
-#     print(path)    
+        node = came_from[node] 
     path.append(start)
     path.reverse()
     return path
-#     return("best route called.")
 
 ### TEST MAPS ###
 map_10 = load_map("map-10.pickle")
