@@ -4,11 +4,13 @@ from helpers import Map, load_map, show_map
 # def shortest_path(Map,start,goal):
 #     return("shortest path called.")
 
-def distance(start, goal):
-    print("map_10 intersections", map_10.intersections)
-    a = map_10.intersections[start]
-    print(a)
-    return("distance called.")
+# calculates the distance between two points
+def distance(start, end):
+#     print("map_10 intersections", map_10.intersections)
+#     a = map_10.intersections[end][0]
+#     print(a)
+    return math.hypot(map_10.intersections[end][0] - map_10.intersections[start][0], map_10.intersections[end][1] - map_10.intersections[start][1])
+#     return("distance called.")
 
 
 
