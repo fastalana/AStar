@@ -1,12 +1,19 @@
 import math
 from helpers import Map, load_map, show_map
 
-# def shortest_path(Map,start,goal):
-#     return("shortest path called.")
+def shortest_path(Map,start,goal):
+    return("shortest path called.")
 
 # calculates the distance between two points
 def distance(start, end):
     return (math.hypot(map_10.intersections[end][0] - map_10.intersections[start][0], map_10.intersections[end][1] - map_10.intersections[start][1]))
+
+# traverse backwards to find the optimal path
+def best_route(came_from, start, goal):
+    if goal not in came_from:
+        return(f"Goal destination {goal} not found in map.")
+
+    return("best route called.")
 
 ### TEST MAPS ###
 map_10 = load_map("map-10.pickle")
