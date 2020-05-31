@@ -1,3 +1,5 @@
 def shortest_path(M,start,goal):
-    print("shortest path called")
-    return
+    return ("shortest path called")
+
+
+print(shortest_path(1, 2, 3,))
