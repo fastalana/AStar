@@ -12,8 +12,18 @@ def distance(start, end):
 def best_route(came_from, start, goal):
     if goal not in came_from:
         return(f"Goal destination {goal} not found in map.")
-
-    return("best route called.")
+    
+    node = goal
+    path = []
+    
+    while node != start:
+        path.append(node)
+        node = came_from[node]
+#     print(path)    
+    path.append(start)
+    path.reverse()
+    return path
+#     return("best route called.")
 
 ### TEST MAPS ###
 map_10 = load_map("map-10.pickle")
@@ -31,7 +41,3 @@ map_10 = load_map("map-10.pickle")
 # shortest_path(map_10, 2, 0)
 # # path: [2, 3, 5, 0]
 
-
-# # test 3
-# shortest_path(map_10, 3, 9)
-# # path: []
