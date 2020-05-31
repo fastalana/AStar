@@ -4,12 +4,15 @@ from helpers import Map, load_map, show_map
 
 # calculates the shortest path between two points
 def shortest_path(Map,start,goal): # example inputs Map = map_10, start = 2, goal = 0
+    # tracks teh nodes visited and what node you "came from"
+    # at the end of this function came_from will look like {2: 0, 4: 2, 3: 2, 1: 2, 5: 3, 7: 5, 0: 5} with the inputs above
     came_from = {}
     came_from[start] = 0 # {2:0}
     
     cost_so_far = {}
     cost_so_far[start] = 0 # {2:0}
     
+    # min heap that tracks the distances between a start and destination node
     frontier = [(0, start)] # [(0,20)]    
     
     while len(frontier) > 0:
@@ -26,11 +29,10 @@ def shortest_path(Map,start,goal): # example inputs Map = map_10, start = 2, goa
                 came_from[neighbor] = node  # {2: 0, 7: 2}
                 cost_so_far[neighbor] = new_cost # {2: 0, 7: 0.49619668801776967}
                 heapq.heappush(frontier, (new_cost, neighbor)) # frontier (once every neighbor has been visited) = [(0.128, 3), (0.212, 4), (0.134, 1)]
-    
 
     return best_route(came_from, start, goal)
 
-# calculates the distance between two points
+# calculates the distance between two nodes
 def distance(start, end):
         return (math.hypot(end[0] - start[0], end[1] - start[1]))
 
