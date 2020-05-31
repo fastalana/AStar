@@ -28,7 +28,10 @@ def shortest_path(Map,start,goal): # example inputs Map = map_10, start = 2, goa
             if neighbor not in current_cost or new_cost < current_cost[neighbor]:
                 node_path[neighbor] = node  # {2: 0, 7: 2}
                 current_cost[neighbor] = new_cost # {2: 0, 7: 0.49619668801776967}
-                heapq.heappush(frontier, (new_cost, neighbor)) # frontier (once every neighbor has been visited) = [(0.128, 3), (0.212, 4), (0.134, 1)]
+                heapq.heappush(frontier, (new_cost, neighbor)) 
+
+                # frontier (once every neighbor has been visited) = [(0.128, 3), (0.212, 4), (0.134, 1)], 
+                # in the next iteration 3 will be the node and (0.128, 3) will be "popped" of the heap and the remaining list will be heapified 
 
     return best_route(node_path, start, goal)
 
