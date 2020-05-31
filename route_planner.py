@@ -6,13 +6,7 @@ from helpers import Map, load_map, show_map
 
 # calculates the distance between two points
 def distance(start, end):
-#     print("map_10 intersections", map_10.intersections)
-#     a = map_10.intersections[end][0]
-#     print(a)
-    return math.hypot(map_10.intersections[end][0] - map_10.intersections[start][0], map_10.intersections[end][1] - map_10.intersections[start][1])
-#     return("distance called.")
-
-
+    return (math.hypot(map_10.intersections[end][0] - map_10.intersections[start][0], map_10.intersections[end][1] - map_10.intersections[start][1]))
 
 ### TEST MAPS ###
 map_10 = load_map("map-10.pickle")
@@ -34,4 +28,3 @@ map_10 = load_map("map-10.pickle")
 # # test 3
 # shortest_path(map_10, 3, 9)
 # # path: []
-
